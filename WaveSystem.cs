@@ -20,8 +20,7 @@ public class WaveSystem : MonoBehaviour
 	//time they spawn between one another
 	public float hStartWait;
 	//when the wave will start
-	public float hWaveWait;
-	//time between hazard waves
+	public float hWaveWait;	//time between hazard waves
 
 	public List<GameObject> enemies;
 	//public GameObject[] enemies;
@@ -56,7 +55,7 @@ public class WaveSystem : MonoBehaviour
 	void Start ()
 	{
 		waves = 0;
-		targetTime = 10f;
+		targetTime = 20f;
 		wavesText.text = "";
 		StartCoroutine (HazardSpawnWaves ());
 		StartCoroutine (EnemySpawnWaves ());
@@ -133,7 +132,7 @@ public class WaveSystem : MonoBehaviour
 		}
 
 		if (waves == 2) {
-			targetTime = 40f;
+			targetTime = 50f;
 			hCount = 25;
 			hSpawnWait = 0.5f;
 			hStartWait = 2;
@@ -146,16 +145,16 @@ public class WaveSystem : MonoBehaviour
 		}
 
 		if (waves == 3) {
-			targetTime = 80f;
-			hCount = 30;
+			targetTime = 100f;
+			hCount = 35;
 			hSpawnWait = 0.5f;
 			hStartWait = 2;
 			hWaveWait = 1;
 
-			eCount = 25;
+			eCount = 30;
 			eSpawnWait = 1;
-			eStartWait = 1;
-			eWaveWait = 2;
+			eStartWait = 0.5f;
+			eWaveWait = 1.5f;
 		}
 
 		//if past the first three waves no more enemies just the boss wave
